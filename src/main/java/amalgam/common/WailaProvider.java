@@ -14,8 +14,12 @@ import mcp.mobius.waila.api.IWailaRegistrar;
 import mcp.mobius.waila.api.SpecialChars;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 public class WailaProvider implements IWailaDataProvider
 {
@@ -97,4 +101,11 @@ public class WailaProvider implements IWailaDataProvider
   public static void callbackRegister(IWailaRegistrar registrar) {
     registrar.registerBodyProvider(new WailaProvider(), Block.class);
   }
+
+@Override
+public NBTTagCompound getNBTData(EntityPlayerMP arg0, TileEntity arg1, NBTTagCompound arg2, World arg3, int arg4,
+		int arg5, int arg6) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

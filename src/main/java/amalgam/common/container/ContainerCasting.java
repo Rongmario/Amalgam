@@ -24,10 +24,6 @@ public class ContainerCasting extends Container
   public ContainerCasting(InventoryPlayer inv, TileCastingTable te)
   {
     this.castingTable = te;
-    
-
-
-
 
     for (int rowNum = 0; rowNum < 3; rowNum++) {
       for (int colNum = 0; colNum < 3; colNum++) {
