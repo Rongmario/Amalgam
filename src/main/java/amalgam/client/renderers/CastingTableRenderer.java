@@ -88,9 +88,6 @@ public class CastingTableRenderer extends TileEntitySpecialRenderer implements I
     IIcon baseSide = table.getBlockTextureFromSide(7);
     IIcon neck = table.getBlockTextureFromSide(6);
     
-
-
-
     renderer.renderFaceYNeg(block, x, y + 1.0F - 0.375F, z, top);
     renderer.renderFaceYPos(block, x, y - 1.0F + 0.25F, z, base);
     

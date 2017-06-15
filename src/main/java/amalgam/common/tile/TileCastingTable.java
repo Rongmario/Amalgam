@@ -10,6 +10,7 @@ import amalgam.common.fluid.AmalgamStack;
 import amalgam.common.fluid.AmalgamTank;
 import amalgam.common.item.ItemAmalgamBlob;
 import amalgam.common.properties.PropertyList;
+import cpw.mods.fml.common.FMLLog;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
@@ -328,16 +329,13 @@ public class TileCastingTable
   }
   
   public void updateAmalgamDistribution() {
-	  if(getFluidAmount() / getTankCapacity() == 0) {
-		  return;
-	  }
-	  else {
-		  float fillPercentage = getFluidAmount() / getTankCapacity();
-		    for (int i = 0; i < this.castingInventory.getSizeInventory(); i++) {
-		        if (this.castingInventory.getCastState(i) != 0) {
-		        	this.castingInventory.setFillAmount(i, fillPercentage);
-		        }  
-	        }   
-      }
+	  if(getFluidAmount() > 0) {
+		  long fillPercentage = getFluidAmount() / getTankCapacity();
+		  for (int i = 0; i < this.castingInventory.getSizeInventory(); i++) {
+			  if (this.castingInventory.getCastState(i) != 0) {
+				  this.castingInventory.setFillAmount(i, fillPercentage);
+			  }
+	      } 
+	  } 
   }
 }
